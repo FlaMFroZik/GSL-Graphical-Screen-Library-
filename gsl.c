@@ -1,4 +1,3 @@
-// gsl.c
 #include "gsl.h"
 #include <string.h>
 
@@ -73,9 +72,7 @@ void gsl_fill(int color) {
 }
 
 void gsl_draw_text(int x, int y, const char* text, int color) {
-    // Устанавливаем цвет текста
     SetTextColor(g_memdc, color);
-    // Прозрачный фон (чтобы не затирать то, что под текстом)
     SetBkMode(g_memdc, TRANSPARENT);
     TextOutA(g_memdc, x, y, text, strlen(text));
     InvalidateRect(g_hwnd, NULL, FALSE);
